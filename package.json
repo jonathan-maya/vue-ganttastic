@@ -68,7 +68,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/InfectoOne/vue-ganttastic"
+    "url": "https://github.com/jonathan-maya/vue-ganttastic"
   },
   "dependencies": {
     "@vueuse/core": "^9.1.1"
