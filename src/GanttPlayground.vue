@@ -9,7 +9,7 @@
     bar-start="beginDate"
     bar-end="endDate"
     :date-format="format"
-    locale="fr"
+    locale="es"
     @click-bar="onClickBar($event.bar, $event.e, $event.datetime)"
     @mousedown-bar="onMousedownBar($event.bar, $event.e, $event.datetime)"
     @dblclick-bar="onMouseupBar($event.bar, $event.e, $event.datetime)"
