@@ -68,6 +68,7 @@ export interface GGanttChartProps {
   rowHeight?: number
   highlightedUnits?: number[]
   font?: string
+  locale?: string
 }
 
 export type GGanttChartConfig = ToRefs<Required<GGanttChartProps>> & {
@@ -89,7 +90,8 @@ const props = withDefaults(defineProps<GGanttChartProps>(), {
   noOverlap: false,
   rowHeight: 40,
   highlightedUnits: () => [],
-  font: "inherit"
+  font: "inherit",
+  locale: 'fr'
 })
 
 const emit = defineEmits<{

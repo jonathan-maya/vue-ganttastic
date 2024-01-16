@@ -2,13 +2,14 @@
   <g-gantt-chart
     :chart-start="chartStart"
     :chart-end="chartEnd"
-    precision="month"
+    precision="day"
     :row-height="40"
     grid
     width="100%"
     bar-start="beginDate"
     bar-end="endDate"
     :date-format="format"
+    locale="fr"
     @click-bar="onClickBar($event.bar, $event.e, $event.datetime)"
     @mousedown-bar="onMousedownBar($event.bar, $event.e, $event.datetime)"
     @dblclick-bar="onMouseupBar($event.bar, $event.e, $event.datetime)"
@@ -31,14 +32,14 @@
 import { ref } from "vue"
 import type { GanttBarObject } from "./types.js"
 
-const chartStart = ref("21.03.2021 12:00")
-const chartEnd = ref("15.07.2021 12:00")
+const chartStart = ref("01.01.2024 12:00")
+const chartEnd = ref("15.01.2024 12:00")
 const format = ref("DD.MM.YYYY HH:mm")
 
 const bars1 = ref<GanttBarObject[]>([
   {
-    beginDate: "24.04.2021 13:00",
-    endDate: "25.05.2021 19:00",
+    beginDate: "04.01.2024 13:00",
+    endDate: "09.02.2024 19:00",
     ganttBarConfig: {
       id: "8621987329",
       label: "I'm in a bundle",
@@ -49,8 +50,8 @@ const bars1 = ref<GanttBarObject[]>([
 
 const bars2 = ref([
   {
-    beginDate: "24.04.2021 13:00",
-    endDate: "25.05.2021 19:00",
+    beginDate: "04.01.2024 13:00",
+    endDate: "09.02.2024 19:00",
     ganttBarConfig: {
       id: "1592311887",
       label: "I'm in a bundle",

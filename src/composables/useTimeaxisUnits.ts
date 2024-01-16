@@ -3,9 +3,13 @@ import type { ManipulateType } from "dayjs"
 
 import useDayjsHelper from "./useDayjsHelper.js"
 import provideConfig from "../provider/provideConfig.js"
+import 'dayjs/locale/es'
+import 'dayjs/locale/fr'
+import 'dayjs/locale/de'
+import 'dayjs/locale/nl'
 
 export default function useTimeaxisUnits() {
-  const { precision } = provideConfig()
+  const { precision, locale } = provideConfig()
   const { chartStartDayjs, chartEndDayjs } = useDayjsHelper()
 
   const upperPrecision = computed(() => {
@@ -25,8 +29,8 @@ export default function useTimeaxisUnits() {
 
   const displayFormats = {
     hour: "HH",
-    date: "DD.MMM ",
-    day: "DD.MMM ",
+    date: "DD/MM",
+    day: "DD/MM",
     month: "MMMM YYYY",
     year: "YYYY"
   }
@@ -116,7 +120,7 @@ export default function useTimeaxisUnits() {
         true
       )
       upperUnits.push({
-        label: chartEndDayjs.value.format(displayFormats[upperUnit]),
+        label: chartEndDayjs.value.format(displayFormats[upperUnit]).toUpperCase(),
         value: String(currentUpperUnitVal),
         date: chartEndDayjs.value.toDate(),
         width: `${(upperUnitMinutesCount / totalMinutes) * 100}%`
